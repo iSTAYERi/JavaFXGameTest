@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+
+<GridPane alignment="center" hgap="10" prefHeight="350.0" prefWidth="500.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Rectangle fx:id="rect" arcHeight="5.0" arcWidth="5.0" height="104.0" stroke="BLACK" strokeType="INSIDE" width="106.0" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+      <ToggleButton fx:id="toggleButtonChangeColor" mnemonicParsing="false" onAction="#pressButtonChangeColor" onMouseEntered="#enteredButtonChangeColor" text="Change color" textFill="#d00b0b" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+      <RadioButton fx:id="radioButton3" mnemonicParsing="false" text="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <toggleGroup>
+            <ToggleGroup fx:id="togGroup1" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radioButton2" mnemonicParsing="false" text="2" toggleGroup="$togGroup1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <RadioButton fx:id="radioButton1" mnemonicParsing="false" selected="true" text="1" toggleGroup="$togGroup1" GridPane.halignment="CENTER" />
+      <ImageView fx:id="imageViewGeneral" fitHeight="303.0" fitWidth="282.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowSpan="11" />
+   </children>
+</GridPane>
