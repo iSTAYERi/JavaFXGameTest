@@ -1,13 +1,12 @@
 package sample;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -23,6 +22,8 @@ public class SecondController implements Initializable{
     public CheckBox checkBoxCPlusPlus;
     public Label labelComment;
     public PasswordField passwordField;
+
+    public List<CheckBox> checkBoxes = new ArrayList<CheckBox>();
 
     public void pressButtonSubmit(){
         if (textFieldLogin.getText().isEmpty()){
@@ -45,7 +46,13 @@ public class SecondController implements Initializable{
                     "\nPassword: " + passwordField.getText() +
                     "\nAge: " + textFieldAge.getText() +
                     "\nSex: " + choiceBoxSex.getValue().toString() +
-                    "\nLanguages: ");
+                    "\nLanguages: "
+            );
+            for(CheckBox n: checkBoxes){
+                if (n.isSelected()){
+                    System.out.println(n.getText());
+                }
+            }
         }
     }
     public void pressButtonClear(){
@@ -58,6 +65,10 @@ public class SecondController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         choiceBoxSex.setItems(FXCollections.observableArrayList("Male", "Female"));
         choiceBoxSex.setValue("Male");
+
+        checkBoxes.add(checkBoxJava);
+        checkBoxes.add(checkBoxPython);
+        checkBoxes.add(checkBoxCPlusPlus);
     }
 
 }
