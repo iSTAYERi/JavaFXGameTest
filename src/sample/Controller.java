@@ -2,6 +2,7 @@ package sample;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ScrollBar;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
@@ -23,6 +24,8 @@ public class Controller implements Initializable{
     public RadioButton radioButton2;
     public RadioButton radioButton3;
     public ImageView imageViewGeneral;
+    public ScrollBar scrollBarRectWidth;
+    public ScrollBar scrollBarRectHeight;
 
 
     public void pressButtonChangeColor(){
@@ -66,10 +69,17 @@ public class Controller implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setImageViewGeneral("grass.jpg");
+        scrollBarRectHeight.valueProperty().addListener(event->{
+            rect.setHeight(scrollBarRectHeight.getValue());
+        });
+        scrollBarRectWidth.valueProperty().addListener(event->{
+            rect.setWidth(scrollBarRectWidth.getValue());
+        });
     }
 
     public void setImageViewGeneral(String imageNameWithExtention) {
         Image imag = new Image(getClass().getResourceAsStream("/pictures/" + imageNameWithExtention));
         imageViewGeneral.setImage(imag);
     }
+
 }

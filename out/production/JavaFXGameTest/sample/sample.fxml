@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.ImageView?>
@@ -14,25 +15,28 @@
 <GridPane alignment="center" hgap="5.0" prefHeight="350.0" prefWidth="500.0" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
       <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
    </columnConstraints>
    <rowConstraints>
+      <RowConstraints minHeight="20.0" />
+      <RowConstraints minHeight="20.0" />
+      <RowConstraints minHeight="20.0" />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
+      <RowConstraints minHeight="100.0" />
+      <RowConstraints minHeight="30.0" prefHeight="30.0" />
+      <RowConstraints minHeight="30.0" />
+      <RowConstraints minHeight="30.0" />
+      <RowConstraints minHeight="30.0" />
    </rowConstraints>
    <children>
-      <Rectangle fx:id="rect" arcHeight="20.0" arcWidth="20.0" height="104.0" stroke="#f5a207" strokeType="INSIDE" strokeWidth="2.0" width="106.0" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
-      <ToggleButton fx:id="toggleButtonChangeColor" mnemonicParsing="false" onAction="#pressButtonChangeColor" onMouseEntered="#enteredButtonChangeColor" style="-fx-base: lightgreen;" text="Change color" textFill="#d00b0b" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="10" GridPane.vgrow="ALWAYS" />
+      <Rectangle fx:id="rect" arcHeight="20.0" arcWidth="20.0" height="100.0" stroke="#f5a207" strokeType="INSIDE" strokeWidth="2.0" width="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+      <ToggleButton fx:id="toggleButtonChangeColor" minWidth="120.0" mnemonicParsing="false" onAction="#pressButtonChangeColor" onMouseEntered="#enteredButtonChangeColor" style="-fx-base: lightgreen;" text="Change color" textFill="#d00b0b" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="10" GridPane.vgrow="ALWAYS" />
       <RadioButton fx:id="radioButton3" mnemonicParsing="false" onAction="#pressRadioButton3" text="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
          <toggleGroup>
             <ToggleGroup fx:id="togGroup1" />
@@ -40,8 +44,10 @@
       </RadioButton>
       <RadioButton fx:id="radioButton2" mnemonicParsing="false" onAction="#pressRadioButton2" text="2" toggleGroup="$togGroup1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <RadioButton fx:id="radioButton1" mnemonicParsing="false" onAction="#pressRadioButton1" selected="true" text="1" toggleGroup="$togGroup1" GridPane.halignment="CENTER" />
-      <ImageView fx:id="imageViewGeneral" fitHeight="271.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowSpan="11" />
-      <Button mnemonicParsing="false" onAction="#pressButtonSecondStage" text="Second Stage" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+      <ImageView fx:id="imageViewGeneral" fitHeight="271.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowSpan="11" />
+      <Button minWidth="120.0" mnemonicParsing="false" onAction="#pressButtonSecondStage" text="&quot;Sign up&quot; page" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
+      <ScrollBar fx:id="scrollBarRectWidth" min="10.0" value="100.0" GridPane.rowIndex="9" />
+      <ScrollBar fx:id="scrollBarRectHeight" min="10.0" orientation="VERTICAL" value="100.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
